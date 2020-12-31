@@ -1,0 +1,35 @@
+Python 3.8.2 (tags/v3.8.2:7b3ab59, Feb 25 2020, 22:45:29) [MSC v.1916 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+=================== RESTART: C:/Users/kumar/Desktop/Mycode.py ==================
+>>> import Mycode as k
+>>> k.create("s",25)
+>>> k.read("s")
+'s:25'
+>>> k.create('m',8)
+>>> k.read('m')
+'m:8'
+>>> k.create('h',9,50)
+>>> k.read('h')
+'h:9'
+>>> k.modify('m',45)
+>>> k.read('m')
+'m:45'
+>>> k.delete('d')
+error: given key does not exist in database. Please enter a valid key
+>>> k.delete('s')
+key is successfully deleted
+>>> k.read('s')
+error: given key does not exist in database. Please enter a valid key
+>>> k.read('h')
+error: time-to-live of h has expired
+>>> k.create('gh%hh')
+Traceback (most recent call last):
+  File "<pyshell#13>", line 1, in <module>
+    k.create('gh%hh')
+TypeError: create() missing 1 required positional argument: 'value'
+>>> k.create('hh7*k',9)
+error: Invalind key_name!! key_name must contain only alphabets and no special characters or numbers
+>>> k.delete('h')
+error: time-to-live of h has expired
+>>> 
